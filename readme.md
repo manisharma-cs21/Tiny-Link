@@ -51,4 +51,4 @@ npm start
 
 ## 🛠️ Deployment
 
-Use Render or Vercel.
+I am using vercel app for deployment 
