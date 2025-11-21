@@ -24,6 +24,7 @@ app.use("/api", require("./routes/api"));
 app.use("/", require("./routes/pages"));
 app.use("/", require("./routes/redirect"));  // last so it doesn't override API
 
-app.listen(process.env.PORT || 3000, () => {
-  console.log("Server running...");
-});
+// app.listen(process.env.PORT || 3000, () => {
+//   console.log("Server running...");
+// });
+module.exports=app;
