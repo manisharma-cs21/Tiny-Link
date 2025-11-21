@@ -9,7 +9,7 @@ router.post("/links",async (req,res)=>{
         if(!url ||!code)
             return res.status(400).json({error:"url and code required"});
 
-        if(!/^[A-Za-z0-9]{6,10}$/.test(code))
+        if(!/^[A-Za-z0-9]{3,10}$/.test(code))
             return res.status(400).json({error:"Invalid code format"})
         const exists=await Link.findOne({code})
         if(exists) return res.status(409).json({ error: "Code already exists" });
