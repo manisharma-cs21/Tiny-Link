@@ -24,17 +24,8 @@ manage links from a clean dashboard.
 
 ## 📦 Installation
 
-``` bash
-git clone https://github.com/your-username/tinylink.git
-cd tinylink
-npm install
-```
-
 Create `.env`:
 
-    MONGO_URI=your_mongo_connection_string
-    BASE_URL=http://localhost:5000
-    PORT=5000
 
 Start server:
 
@@ -49,7 +40,7 @@ npm start
      ├── models/
      ├── routes/
      ├── public/
-     ├── app.js
+     ├── server.js
      └── README.md
 
 ## 🔗 API Endpoints
