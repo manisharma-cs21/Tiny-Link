@@ -1,0 +1,60 @@
+<div class="bg-white shadow rounded p-6">
+
+  <h2 class="text-2xl font-bold mb-4">Dashboard</h2>
+
+  <!-- Add new link form -->
+  <form action="/api/links" method="POST" class="space-y-4 mb-6">
+
+    <div>
+      <label class="block font-medium">Long URL</label>
+      <input type="text" name="url" required
+        class="w-full border p-2 rounded" placeholder="https://example.com" />
+    </div>
+
+    <div>
+      <label class="block font-medium">Custom Code (optional)</label>
+      <input type="text" name="code"
+        class="w-full border p-2 rounded" placeholder="e.g. docs" />
+    </div>
+
+    <button type="submit"
+      class="bg-blue-600 text-white px-4 py-2 rounded">
+      Shorten URL
+    </button>
+  </form>
+
+  <!-- Links Table -->
+  <table class="w-full border-collapse">
+    <thead>
+      <tr class="bg-gray-200 text-left">
+        <th class="p-2">Code</th>
+        <th class="p-2">URL</th>
+        <th class="p-2">Clicks</th>
+        <th class="p-2">Last Clicked</th>
+        <th class="p-2">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <% links.forEach(link => { %>
+      <tr class="border-b">
+        <td class="p-2"><a href="/<%= link.code %>" class="text-blue-600"><%= link.code %></a></td>
+        <td class="p-2 truncate max-w-xs"><%= link.url %></td>
+        <td class="p-2"><%= link.clicks %></td>
+        <td class="p-2"><%= link.lastClicked ? link.lastClicked.toLocaleString() : 'Never' %></td>
+
+        <td class="p-2">
+          <form action="/api/links/<%= link.code %>?_method=DELETE" method="POST">
+            <button class="bg-red-500 text-white px-3 py-1 rounded">
+              Delete
+            </button>
+          </form>
+        </td>
+
+      </tr>
+      <% }) %>
+
+    </tbody>
+  </table>
+
+</div>

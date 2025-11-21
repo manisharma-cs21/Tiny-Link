@@ -1,0 +1,9 @@
+<div class="bg-white shadow rounded p-6">
+  <h2 class="text-2xl font-bold mb-4">Stats for: <%= link.code %></h2>
+
+  <p class="mb-2"><strong>Original URL:</strong> <%= link.url %></p>
+  <p class="mb-2"><strong>Total Clicks:</strong> <%= link.clicks %></p>
+  <p class="mb-2"><strong>Last Clicked:</strong> <%= link.lastClicked ? link.lastClicked.toLocaleString() : 'Never' %></p>
+
+  <a href="/" class="text-blue-600 underline mt-4 block">Back to Dashboard</a>
+</div>
